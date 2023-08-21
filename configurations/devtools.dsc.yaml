@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify Windows Version
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+
+  resources:
+
+    #
+    # Additional Tools
+    #
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: LINQPad7
+      directives:
+        description: Install LINQPad 7
+        allowPrerelease: true
+      settings:
+        id: LINQPad.LINQPad.7
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PerfView
+      directives:
+        description: Install PerfView
+        allowPrerelease: true
+      settings:
+        id: Microsoft.PerfView
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ILSpy
+      directives:
+        description: Install ILSpy
+        allowPrerelease: true
+      settings:
+        id: icsharpcode.ILSpy
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: MSBuildLogViewer
+      directives:
+        description: Install MSBuild Structured Log Viewer
+        allowPrerelease: true
+      settings:
+        id: KirillOsenkov.MSBuildStructuredLogViewer
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: NuGetPackageExplorer
+      directives:
+        description: Install NuGet Package Explorer
+        allowPrerelease: true
+      settings:
+        Id: '9WZDNCRDMDM3'
+        Source: msstore
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: WinDirStat
+      directives:
+        description: Install WinDirStat
+        allowPrerelease: true
+      settings:
+        id: WinDirStat.WinDirStat
+        source: winget
